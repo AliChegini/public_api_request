@@ -19,6 +19,7 @@ To get started with this project, simply clone the repository to your local mach
 **Resources**
 
 [Random User Generator API](https://randomuser.me/)
+
 [jQuery](https://jquery.com/)
 
 **Conclusion**
