@@ -1,12 +1,12 @@
 
-// Set API endpoint URL and parameters
+// API endpoint URL and parameters
 const apiUrl = 'https://randomuser.me/api/';
 const apiParams = {
   results: 12,
   nat: 'us'
 };
 
-// Get JSON data from API
+// Async function to get JSON data from API
 async function fetchData(url, params) {
     try {
       const response = await fetch(url + "?" + $.param(params));
@@ -19,7 +19,7 @@ async function fetchData(url, params) {
 }
   
 
-// Create HTML for user card element
+// function to create HTML for user card element
 function createUserCard(user) {
   const userCard = document.createElement('div');
   userCard.className = 'card';
@@ -36,7 +36,7 @@ function createUserCard(user) {
   return userCard;
 }
 
-// Create HTML for modal window element
+// function to create HTML for modal window element
 function createModalWindow(user) {
   const modalWindow = document.createElement('div');
   modalWindow.className = 'modal-container';
@@ -58,8 +58,8 @@ function createModalWindow(user) {
   return modalWindow;
 }
 
-// Add click event listener to user card elements to show modal window with user data
-function addEventListeners() {
+// function to add click event listener to user card elements to show modal window
+function addEventListeners(users) {
   const userCards = document.querySelectorAll('.card');
   userCards.forEach((userCard, index) => {
     userCard.addEventListener('click', () => {
@@ -76,15 +76,15 @@ function addEventListeners() {
   });
 }
 
-// Initialize app by fetching data from API, generating HTML for user cards, and adding event listeners
+// function to initialize app by fetching data from API, generating HTML for user cards, and adding event listeners
 function initApp() {
   fetchData(apiUrl, apiParams)
     .then(data => {
-      users = data;
+      let users = data;
       const userCards = users.map(user => createUserCard(user));
       const gallery = document.querySelector('#gallery');
       userCards.forEach(userCard => gallery.appendChild(userCard));
-      addEventListeners();
+      addEventListeners(users);
     })
     .catch(error => {
       console.error('Error fetching data:', error);
