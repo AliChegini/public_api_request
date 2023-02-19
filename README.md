@@ -18,9 +18,9 @@ To get started with this project, simply clone the repository to your local mach
 
 **Resources**
 
-[Random User Generator API](https://randomuser.me/){:onclick="window.open(this.href,'_blank'); return false;"}
+[Random User Generator API](https://randomuser.me/)
 
-[jQuery](https://jquery.com/){:target="_blank" rel="noopener"}
+[jQuery](https://jquery.com/)
 
 **Conclusion**
 
